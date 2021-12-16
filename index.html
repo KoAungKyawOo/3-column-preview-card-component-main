@@ -29,6 +29,8 @@
     }
 
     @media (min-width:769px) {
+
+      .threeColumn,
       body {
         height: 100vh;
       }
@@ -89,72 +91,103 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
+
+    #mainBody {
+      display: none;
+    }
   </style>
 </head>
 
-<body class="d-md-flex flex-md-column">
-  <div class="d-flex overflow-hidden flex-column flex-md-row align-items-md-center mainContainer">
-    <div class="col col-md-4 container boxOne">
-      <div class=" m-4 p-4">
-        <div class="d-flex flex-column ">
-          <div class="mb-5">
-            <img src="./images/icon-sedans.svg" alt="" />
-            <h1 class="h1 py-3 mt-3">Sedans</h1>
-            <p class="pb-5 my-2">
-              Choose a sedan for its affordability and excellent fuel economy.
-              Ideal for cruising in the city or on your next road trip.
-            </p>
-          </div>
-          <div class="mt-auto">
-            <button style="color: hsl(31, 77%, 52%);">Learn More</button>
-          </div>
+<body onload="myFunction()">
+  <div id="spinner">
+    <div class="d-flex justify-content-center">
+      <div class="position-absolute" style="top: 50%;">
+        <div class="spinner-grow text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-      </div>
-    </div>
-    <div class="col col-md-4 container boxTwo">
-      <div class=" m-4 p-4">
-        <div class="d-flex flex-column">
-          <div class="mb-5">
-            <img src="./images/icon-suvs.svg" alt="" />
-            <h1 class="h1 py-3 mt-3">SUVs</h1>
-            <p class="pb-5 my-2">
-              Take an SUV for its spacious interior, power, and versatility. Perfect
-              for your next family vacation and off-road adventures.
-            </p>
-          </div>
-          <div class="mt-auto">
-            <button style="color: hsl(184, 100%, 22%);">Learn More</button>
-          </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-      </div>
-    </div>
-    <div class="col col-md-4 container boxThree">
-      <div class=" m-4 p-4">
-        <div class="d-flex flex-column">
-          <div class="mb-5">
-            <img src="./images/icon-luxury.svg" alt="" />
-            <h1 class="h1 py-3 mt-3">Luxury</h1>
-            <p class="pb-5 my-2">
-              Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a
-              luxury rental and arrive in style.
-            </p>
-          </div>
-          <div class="mt-auto">
-            <button style="color: hsl(179, 100%, 13%);">Learn More</button>
-          </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
       </div>
     </div>
   </div>
+  <div id="mainBody">
+    <div class="d-md-flex flex-md-column threeColumn">
+      <div class="d-flex overflow-hidden flex-column flex-md-row align-items-md-center mainContainer">
+        <div class="col col-md-4 container boxOne">
+          <div class=" m-4 p-4">
+            <div class="d-flex flex-column ">
+              <div class="mb-5">
+                <img src="./images/icon-sedans.svg" alt="" />
+                <h1 class="h1 py-3 mt-3">Sedans</h1>
+                <p class="pb-5 my-2">
+                  Choose a sedan for its affordability and excellent fuel economy.
+                  Ideal for cruising in the city or on your next road trip.
+                </p>
+              </div>
+              <div class="mt-auto">
+                <button style="color: hsl(31, 77%, 52%);">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4 container boxTwo">
+          <div class=" m-4 p-4">
+            <div class="d-flex flex-column">
+              <div class="mb-5">
+                <img src="./images/icon-suvs.svg" alt="" />
+                <h1 class="h1 py-3 mt-3">SUVs</h1>
+                <p class="pb-5 my-2">
+                  Take an SUV for its spacious interior, power, and versatility. Perfect
+                  for your next family vacation and off-road adventures.
+                </p>
+              </div>
+              <div class="mt-auto">
+                <button style="color: hsl(184, 100%, 22%);">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-4 container boxThree">
+          <div class=" m-4 p-4">
+            <div class="d-flex flex-column">
+              <div class="mb-5">
+                <img src="./images/icon-luxury.svg" alt="" />
+                <h1 class="h1 py-3 mt-3">Luxury</h1>
+                <p class="pb-5 my-2">
+                  Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a
+                  luxury rental and arrive in style.
+                </p>
+              </div>
+              <div class="mt-auto">
+                <button style="color: hsl(179, 100%, 13%);">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
-  <div class="attribution">
-    Challenge by
-    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your
-      Name Here</a>.
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+          href="#">Your
+          Name Here</a>.
+      </div>
+    </div>
   </div>
-  <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelector("body").onload = () => {
+      setTimeout(() => {
+        document.querySelector("#spinner").style.display = 'none';
+        document.querySelector("#mainBody").style.display = 'block';
+      }, 2000);
+    }
+  </script>
 </body>
 
 </html>
